@@ -1,0 +1,233 @@
+.rbt-modal-box {
+  transition: all 0.3s ease;
+}
+.rbt-modal-box .modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  background: transparent;
+}
+.rbt-modal-box .modal-dialog .wrapper {
+  width: 850px;
+  height: auto;
+  padding: 70px;
+  background: var(--color-blackest);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+.rbt-modal-box .modal-dialog .wrapper.modal-small {
+  width: 500px;
+  align-items: flex-start;
+}
+.rbt-modal-box .modal-dialog .wrapper.modal-medium {
+  width: 700px;
+}
+.rbt-modal-box .modal-dialog .wrapper.modal-large {
+  width: 900px;
+}
+.rbt-modal-box .modal-dialog .wrapper select {
+  background: transparent;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.rbt-modal-box .modal-dialog .wrapper select:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.rbt-modal-box .modal-dialog .wrapper select option {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: var(--radius-small);
+  border: 2px solid var(--color-border);
+  color: var(--color-heading);
+  margin: 5px;
+  font-size: var(--font-size-b3);
+  line-height: var(--line-height-b3);
+}
+.rbt-modal-box .modal-dialog .wrapper select option:checked {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.rbt-modal-box .modal-dialog .wrapper select option:focus, .rbt-modal-box .modal-dialog .wrapper select option:active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  outline: none;
+}
+.rbt-modal-box .modal-dialog .wrapper select option::-moz-selection {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.rbt-modal-box .modal-dialog .wrapper select option::selection {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.rbt-modal-box .modal-dialog .wrapper .chat-form .title {
+  color: var(--color-body);
+}
+.rbt-modal-box .modal-dialog .wrapper .chat-form .text-form {
+  border-radius: var(--radius);
+}
+.rbt-modal-box .modal-dialog .wrapper .chat-form .text-form textarea,
+.rbt-modal-box .modal-dialog .wrapper .chat-form .text-form input {
+  border: none;
+  padding: 10px 20px;
+}
+.rbt-modal-box .modal-dialog .wrapper .close-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: var(--color-primary);
+  box-shadow: none;
+  border: none;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--color-white);
+  transition: 0.4s;
+}
+.rbt-modal-box .modal-dialog .wrapper .close-button:hover {
+  transform: scale(1.1);
+}
+
+.genarator-section {
+  width: 100%;
+  margin: 0 auto;
+}
+.genarator-section .genarator-form-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.genarator-section .genarator-form-top .title {
+  margin-bottom: 0;
+}
+.genarator-section .genarator-form-top .btn-transparent {
+  background: transparent;
+  border: none;
+}
+.genarator-section .genarator-form-top .btn-transparent span {
+  color: var(--color-heading);
+}
+.genarator-section .genarator-card-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.genarator-section .genarator-card-group li {
+  flex-basis: 50%;
+  padding: 10px;
+  margin: 0;
+}
+
+.genarator-card {
+  padding: 10px 15px 10px;
+  border: 2px solid var(--color-border);
+  display: block;
+  border-radius: var(--radius);
+}
+.genarator-card .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.genarator-card .inner .left-align {
+  display: flex;
+  align-items: center;
+}
+.genarator-card .inner .left-align .img-bar {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.genarator-card .inner .left-align .title {
+  margin-bottom: 0;
+  text-align: left;
+}
+.genarator-card .inner .right-align .icon-bar {
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in-out 0.3s;
+}
+.genarator-card:hover {
+  background: var(--color-primary);
+  border-color: var(--color-dark);
+}
+.genarator-card:hover .right-align .icon-bar {
+  opacity: 1;
+  visibility: visible;
+  color: var(--color-white);
+}
+.genarator-card:hover .title {
+  color: var(--color-white);
+}
+.genarator-card:hover .left-align .img-bar {
+  background: rgba(0, 0, 0, 0.11);
+}
+.genarator-card.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.modal-backdrop.show {
+  opacity: 0.8;
+}
+
+.genarator-card-group.full-width-list li {
+  flex-basis: 100%;
+  margin: 0 10px;
+}
+
+.genarator-card.center-align {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+.genarator-card.center-align .inner {
+  padding: 15px 10px 25px;
+  justify-content: center;
+}
+.genarator-card.center-align .left-align {
+  flex-direction: column;
+}
+.genarator-card.center-align .left-align .img-bar {
+  margin-right: 0;
+  margin-bottom: 10px;
+  background: none;
+  padding: 0;
+  height: unset;
+  width: unset;
+}
+.genarator-card.center-align .left-align .img-bar img {
+  max-height: 40px;
+}
+.genarator-card.center-align .left-align .title {
+  text-align: center !important;
+}
+.genarator-card.center-align .rainbow-badge-card {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.genarator-card.center-align.bg-flashlight-static:hover {
+  background: inherit;
+}
+.genarator-card.center-align.bg-flashlight-static:hover::before {
+  background: linear-gradient(to bottom, var(--color-primary), rgba(39, 39, 55, 0.1803921569));
+}/*# sourceMappingURL=modal-box.css.map */

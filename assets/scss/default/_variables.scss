@@ -2,14 +2,14 @@
 :root {
 
     // Theme Color
-    --color-primary: #805AF5;
+    --color-primary: #1f1f1f;
     --color-primary-alt: #35316f;
-    --color-secondary: #CD99FF;
+    --color-secondary: #aaa9ff;
 
 
     // Gredient Color 
-    --color-primary-gradient-start: #805AF5;
-    --color-primary-gradient-end: #CD99FF;
+    --color-primary-gradient-start: #4e4e4e;
+    --color-primary-gradient-end: #cccccc;
 
     // Typo Color 
     --color-heading: #ffffff;
@@ -25,7 +25,7 @@
 
 
     --color-black: #000000;
-    --color-blackest: #16181E;
+    --color-blackest: #1f1f1f;
     --color-border: rgba(255, 255, 255, 0.05);
     --color-border-light: #e5e7eb;
     --color-border-dark: #1E1E1E;
@@ -33,7 +33,7 @@
 
     // Dark-Mode
     --dark-bg-1: #F8F8FF;
-    --dark-bg-2: #212330;
+    --dark-bg-2: #313131;
     --dark-bg-3: #DDE7FF;
     --dark-bg-4: #EBEFFF;
     --dark-color-link: #55595C; // Dark Primary
@@ -41,7 +41,7 @@
     --color-strock: #EFEFFF;
 
     --dark-gradient-1: linear-gradient(180deg, rgba(122, 151, 255, 0.19) 0%, rgba(248, 248, 255, 0.19) 100%);
-    --dark-gradient-2: linear-gradient(90deg, #6A48F2 0%, #CD99FF 68.75%);
+    --dark-gradient-2: linear-gradient(90deg, #9a9dc9 0%, #ffffff 68.75%);
     --dark-gradient-3: linear-gradient(93deg, #D3E0FF 0.78%, rgba(221, 231, 255, 0.00) 97.43%);
 
     --dark-shadow-1: 0px 14px 36.7px 0px rgba(14, 12, 21, 0.06);
@@ -50,7 +50,7 @@
 
 
     //Bg Color
-    --color-bg-1: #0E0C15; // use in Dark
+    --color-bg-1: #0f0f0f; // use in Dark
 
     // Gery Colors 
     --color-gray: #3E414B;

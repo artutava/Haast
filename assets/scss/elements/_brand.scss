@@ -130,7 +130,7 @@
             img {
                 opacity: 0.6;
                 transition: 0.3s;
-                max-height: 34px;
+                max-height: 45px;
             }
         }
 
@@ -151,7 +151,7 @@
             left: 0;
             height: 100%;
             width: 200px;
-            background: linear-gradient(90deg, #0E0C15 0.09%, rgba(14, 12, 21, 0.00) 58.8%);
+            background: linear-gradient(90deg, #0f0f0f 0.09%, rgba(14, 12, 21, 0.00) 58.8%);
             z-index: 1;
         }
         &::after{
@@ -161,7 +161,7 @@
             right: 0;
             height: 100%;
             width: 200px;
-            background: linear-gradient(270deg, #0E0C15 0%, rgba(14, 12, 21, 0.00) 45.61%);
+            background: linear-gradient(270deg, #0f0f0f 0%, rgba(14, 12, 21, 0.00) 45.61%);
             z-index: 1;
         }
         .single-slider{
