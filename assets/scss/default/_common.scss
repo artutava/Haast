@@ -977,3 +977,19 @@ video.bg-video {
     position: relative;
     overflow:hidden;
 }
+
+.bg_ruido {
+    background-color: var(--color-blackest) !important;
+    background: url(../images/bg/haast_bg_bw_noise.png) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+}
+
+.default_imgs_haast {
+    border-radius: 18px;
+}
+
+.section-dobra-padrao {
+    min-height:70vh;
+}

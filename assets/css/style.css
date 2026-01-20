@@ -8097,6 +8097,22 @@ video.bg-video {
   overflow: hidden;
 }
 
+.bg_ruido {
+  background-color: var(--color-blackest) !important;
+  background: url(../images/bg/haast_bg_bw_noise.png) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+}
+
+.default_imgs_haast {
+  border-radius: 18px;
+}
+
+.section-dobra-padrao {
+  min-height: 70vh;
+}
+
 /* ========= Forms Styles ========= */
 button,
 [type=button],
@@ -10246,7 +10262,7 @@ xclip
 ======================*/
 .breadcarumb-style-1 {
   background-color: var(--color-blackest) !important;
-  background: url(../images/bg/breadcrumb-bg.png);
+  background: url(../images/bg/haast_bg_bw_noise.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
 
-    <title>Home || AiWave- AI SaaS Website HTML5 UI Kit</title>
+    <title>Haast Autonomous</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.png">
     <!-- CSS ============================================ -->
@@ -723,7 +723,7 @@
 <div class="hero-new" data-black-overlay="1">
 
     <!-- Background Video -->
-    <video class="bg-video"
+    <video id="heroVideo" class="bg-video"
            autoplay
            muted
            playsinline
@@ -731,7 +731,91 @@
         <source src="assets/video/hero.mp4" type="video/mp4" loop="false">
         Your browser does not support the video tag.
     </video>
+<script>
+(() => {
+  const video = document.getElementById("heroVideo");
 
+  // Your timeline
+  const FPS = 24;
+  const LOOP_START = 106 / FPS; // frames 106-263 loop
+  const LOOP_END   = 263 / FPS;
+
+  // Safety margin to prevent overshoot (helps Safari/iOS)
+  const EPSILON = 0.03; // ~30ms
+
+  // Internal state
+  let rafId = null;
+  let loopArmed = false;
+
+  function clampLoopStart() {
+    // Ensure we never seek before the intended loop start
+    if (video.currentTime < LOOP_START) {
+      video.currentTime = LOOP_START;
+    }
+  }
+
+  function tick() {
+    // Stop if not playing
+    if (video.paused || video.ended) {
+      rafId = null;
+      return;
+    }
+
+    // Only start enforcing loop after we have passed LOOP_START once
+    // This guarantees frames 1-105 play naturally.
+    if (!loopArmed && video.currentTime >= LOOP_START) {
+      loopArmed = true;
+    }
+
+    // Loop logic with safety margin
+    if (loopArmed && video.currentTime >= (LOOP_END - EPSILON)) {
+      video.currentTime = LOOP_START;
+      // Some browsers benefit from an explicit play() after a seek
+      // (safe even if already playing)
+      video.play().catch(() => {});
+    }
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function startLoopWatcher() {
+    if (rafId == null) rafId = requestAnimationFrame(tick);
+  }
+
+  // Start watcher when playback starts
+  video.addEventListener("play", startLoopWatcher);
+
+  // If the user seeks manually, keep behavior consistent
+  video.addEventListener("seeking", () => {
+    // If they seek into the loop region, arm it.
+    if (video.currentTime >= LOOP_START) loopArmed = true;
+  });
+
+  // If metadata loads late, nothing breaks.
+  // Optional: if you want to guarantee a clean starting point:
+  // video.addEventListener("loadedmetadata", () => { video.currentTime = 0; });
+
+  // If your page uses autoplay, some browsers won't fire "play" immediately.
+  // This ensures it starts when it can.
+  video.addEventListener("canplay", () => {
+    if (video.autoplay && video.paused) {
+      video.play().catch(() => {});
+    }
+  });
+
+  // Bonus: pause loop checking when tab is hidden (saves CPU, prevents drift)
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      if (rafId != null) cancelAnimationFrame(rafId);
+      rafId = null;
+    } else if (!video.paused && !video.ended) {
+      startLoopWatcher();
+      // If we came back and we're beyond end, snap back cleanly
+      if (loopArmed && video.currentTime >= LOOP_END) clampLoopStart();
+    }
+  });
+})();
+</script>
    
 
     <div class="container video-overlay-text">
@@ -786,6 +870,35 @@
                 </div>
             </div>
         </div>
+<!--Start dobra inicial-->
+
+<div class="section-dobra-padrao d-flex align-items-center">
+
+     <div class="container">
+                <div class="row align-items-center w-100">
+                    <div class="col-lg-6">
+                        <div class="section-title text-left" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
+                            <h4 class="subtitle">
+                                <span class="theme-gradient">About us</span>
+                            </h4>
+                            <h2 class="title mb--60">
+                                Far, Fast, Life-saving
+                            </h2>
+                            <p>
+                               At Haast Autonomous, we build high-speed, long-range unmanned aircraft to transform how life-saving medical supplies are delivered, starting with organs. Our purpose-built autonomous hybrid VTOL aircraft replace slow, fragmented, and high-risk transport methods, dramatically reducing handoffs, delays, and cost. Our mission is to define the future of medical logistics by delivering critical cargo faster, safer, and more reliably than ever before.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="default_imgs_haast" src="assets/images/product/haast_box.png">
+                    </div>
+                </div>
+            </div>
+
+</div>
+
+
+<!--End dobra inicial-->
 
         <!-- Start Tab__Style--one Area  -->
         <div class="rainbow-service-area rainbow-section-gap">
@@ -1039,10 +1152,10 @@
                     <div class="col-lg-12">
                         <div class="section-title text-left" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
                             <h4 class="subtitle">
-                                <span class="theme-gradient">Assisting individuals</span>
+                                <span class="theme-gradient">The Problem</span>
                             </h4>
                             <h2 class="title mb--60">
-                                Chat Smarter, Not <br> Harder with
+                                Why Organs Don’t Reach<br> Patients Fast Enough
                             </h2>
                         </div>
                     </div>
@@ -1059,10 +1172,8 @@
                                             <img src="assets/images/icons/service-icon-01.svg" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Ask anything</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions
-                                                without
-                                                having to search through multiple sources.</p>
+                                            <h5 class="title">The Organ Transport Crisis</h5>
+                                            <p class="desc">Nearly half of all viable organs are lost each year due to avoidable transport delays. Hospitals depend on slow ground routes or costly charter flights, wasting precious minutes. For hearts and lungs, even a short delay can mean the difference between life and loss.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i
                                                         class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
@@ -1082,10 +1193,8 @@
                                             <img src="assets/images/icons/service-icon-02.svg" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Connect everywhere</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions
-                                                without
-                                                having to search through multiple sources.</p>
+                                            <h5 class="title">Outdated, Fragmented Logistics</h5>
+                                            <p class="desc">Organ transport relies on multiple handoffs between couriers, airlines, and medical teams. This fragmented chain creates delays, miscommunication, and zero real-time visibility. There is no centralized system to ensure speed, control, and reliability.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i
                                                         class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
@@ -1105,10 +1214,8 @@
                                             <img src="assets/images/icons/service-icon-03.svg" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Fast responding</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions
-                                                without
-                                                having to search through multiple sources.</p>
+                                            <h5 class="title">Limited Access for Rural Patients</h5>
+                                            <p class="desc">Patients in rural and remote regions face fewer transplant opportunities because of geographic limitations. Smaller hospitals frequently lack access to fast, reliable transport, leading to unequal outcomes where survival depends on location rather than medical need.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i
                                                         class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
@@ -1128,10 +1235,8 @@
                                             <img src="assets/images/icons/service-icon-01.svg" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Ask anything</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions
-                                                without
-                                                having to search through multiple sources.</p>
+                                            <h5 class="title">Speed Without Friction</h5>
+                                            <p class="desc">What the system lacks is fast, safe, and direct delivery without logistical friction. Haast Autonomous solves this with unmanned aerial transport designed for long range, precision, and reliability—connecting donor to recipient without delay.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i
                                                         class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
@@ -1144,52 +1249,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="slide-single-layout">
-                                <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
-                                    <div class="inner">
-                                        <div class="icon">
-                                            <img src="assets/images/icons/service-icon-02.svg" alt="Servece Icon">
-                                        </div>
-                                        <div class="description centered-shape">
-                                            <h5 class="title">Connect everywhere</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions
-                                                without
-                                                having to search through multiple sources.</p>
-                                            <a class="read-more-btn" href="#">Explore More <span><i
-                                                        class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
-                                        </div>
-                                    </div>
-                                    <div class="bg-shaped">
-                                        <img src="assets/images/service/bg.png" alt="" class="bg shape-dark">
-                                        <img src="assets/images/service/bg-hover.png" alt="" class="bg-hover shape-dark">
-                                        <img src="assets/images/light/service/bg.png" alt="" class="bg shape-light">
-                                        <img src="assets/images/light/service/bg-hover.png" alt="" class="bg-hover shape-light">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-single-layout">
-                                <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
-                                    <div class="inner">
-                                        <div class="icon">
-                                            <img src="assets/images/icons/service-icon-03.svg" alt="Servece Icon">
-                                        </div>
-                                        <div class="description centered-shape">
-                                            <h5 class="title">Fast responding</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions
-                                                without
-                                                having to search through multiple sources.</p>
-                                            <a class="read-more-btn" href="#">Explore More <span><i
-                                                        class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
-                                        </div>
-                                    </div>
-                                    <div class="bg-shaped">
-                                        <img src="assets/images/service/bg.png" alt="" class="bg shape-dark">
-                                        <img src="assets/images/service/bg-hover.png" alt="" class="bg-hover shape-dark">
-                                        <img src="assets/images/light/service/bg.png" alt="" class="bg shape-light">
-                                        <img src="assets/images/light/service/bg-hover.png" alt="" class="bg-hover shape-light">
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -1434,7 +1494,7 @@
         <!-- Start CTA Style-one Area  -->
         <div class="rainbow-rn-cta">
             <div class="container">
-                <div class="row row--0 align-items-center content-wrapper">
+                <div class="row row--0 align-items-center content-wrapper bg_ruido">
                     <div class="col-lg-8">
                         <div class="inner">
                             <div class="content text-left">
@@ -1455,9 +1515,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-shape">
-                        <img src="assets/images/cta-img/bg-shape-01.png" alt="BG Shape">
-                    </div>
+                    
                 </div>
             </div>
         </div>
