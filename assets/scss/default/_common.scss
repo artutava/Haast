@@ -993,3 +993,528 @@ video.bg-video {
 .section-dobra-padrao {
     min-height:70vh;
 }
+
+/* ===========================================
+   GLASS CARD + GLOBAL SPOTLIGHT (SCSS COMPLETE)
+   - Presets configuram: cor do card, alpha, blur, borda base, intensidades, raio
+   - Cor do spotlight e do glow da borda é por preset
+   - Frost (jateado/milky) configurável SEM depender do mouse
+   - JS set: --sx, --sy, --spot-a, --edge-a
+   =========================================== */
+
+/* ---- TOKENS (defaults) ---- */
+$glass-radius: 18px;
+
+/* default base card color (RGB channels) */
+$glass-bg-r: 10;
+$glass-bg-g: 10;
+$glass-bg-b: 14;
+
+$glass-bg-alpha: 0.55;
+$glass-border-alpha: 0.18;
+$glass-blur: 14px;
+
+/* frost (milky) defaults */
+$glass-frost: 0.10;      // 0..1 (quanto “jateado”)
+$glass-overlay: 0.55;    // opacidade do overlay ::after
+
+$glass-spot-intensity: 0.55;
+$glass-edge-intensity: 0.55;
+
+$glass-spot-radius: 360px;
+$glass-edge-scale: 0.75;
+
+/* default spotlight colors (channels) */
+$spot-r: 255; $spot-g: 255; $spot-b: 255;   // spot (fundo)
+$edge-r: 120; $edge-g: 200; $edge-b: 255;   // edge (borda)
+
+$glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+
+/* ===========================================
+   BASE CARD
+   =========================================== */
+.card-glass-new {
+  /* geometry */
+  --glass-radius: #{$glass-radius};
+
+  /* base card color */
+  --glass-bg-r: #{$glass-bg-r};
+  --glass-bg-g: #{$glass-bg-g};
+  --glass-bg-b: #{$glass-bg-b};
+
+  /* glass controls */
+  --glass-bg-alpha: #{$glass-bg-alpha};
+  --glass-border-alpha: #{$glass-border-alpha};
+  --glass-blur: #{$glass-blur};
+
+  /* frost (jateado) controls */
+  --glass-frost: #{$glass-frost};   /* 0..1 */
+  --glass-overlay: #{$glass-overlay};
+
+  /* frost color (usually white, can be tinted per preset) */
+  --glass-frost-r: 255;
+  --glass-frost-g: 255;
+  --glass-frost-b: 255;
+
+  /* spotlight controls */
+  --glass-spot-i: #{$glass-spot-intensity};
+  --glass-edge-i: #{$glass-edge-intensity};
+  --glass-spot-r: #{$glass-spot-radius};
+  --glass-edge-scale: #{$glass-edge-scale};
+
+  /* spotlight colors (per preset) */
+  --glass-spot-rgb-r: #{$spot-r};
+  --glass-spot-rgb-g: #{$spot-g};
+  --glass-spot-rgb-b: #{$spot-b};
+
+  --glass-edge-rgb-r: #{$edge-r};
+  --glass-edge-rgb-g: #{$edge-g};
+  --glass-edge-rgb-b: #{$edge-b};
+
+  /* Vars dinâmicas do JS */
+  --sx: 0px;
+  --sy: 0px;
+  --spot-a: 0;
+  --edge-a: 0;
+
+  /* alphas finais (mouse) */
+  --spot-alpha: calc(var(--glass-spot-i) * var(--spot-a));
+  --edge-alpha: calc(var(--glass-edge-i) * var(--edge-a));
+
+  position: relative;
+  border-radius: var(--glass-radius);
+  padding: 18px;
+  overflow: hidden;
+
+  /* base glass */
+  background-color: rgba(
+    var(--glass-bg-r),
+    var(--glass-bg-g),
+    var(--glass-bg-b),
+    var(--glass-bg-alpha)
+  );
+
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+
+  /* layers:
+     1) frost base (sempre)
+     2) frost highlight (sempre)
+     3) spotlight mouse (dinâmico)
+     4) optional texture
+  */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        var(--glass-frost-r),
+        var(--glass-frost-g),
+        var(--glass-frost-b),
+        calc(var(--glass-frost) * 0.22)
+      ),
+      rgba(
+        var(--glass-frost-r),
+        var(--glass-frost-g),
+        var(--glass-frost-b),
+        calc(var(--glass-frost) * 0.10)
+      )
+    ),
+    radial-gradient(
+      120% 140% at 15% 10%,
+      rgba(255,255,255, calc(var(--glass-frost) * 0.18)),
+      rgba(255,255,255, 0) 55%
+    ),
+    radial-gradient(
+      circle var(--glass-spot-r) at var(--sx) var(--sy),
+      rgba(
+        var(--glass-spot-rgb-r),
+        var(--glass-spot-rgb-g),
+        var(--glass-spot-rgb-b),
+        var(--spot-alpha)
+      ),
+      rgba(
+        var(--glass-spot-rgb-r),
+        var(--glass-spot-rgb-g),
+        var(--glass-spot-rgb-b),
+        0
+      ) 60%
+    );
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-alpha));
+  box-shadow: $glass-shadow;
+}
+
+
+/* ===========================================
+   EDGE GLOW (BORDA)
+   =========================================== */
+.card-glass-new::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle calc(var(--glass-spot-r) * var(--glass-edge-scale)) at var(--sx) var(--sy),
+    rgba(
+      var(--glass-edge-rgb-r),
+      var(--glass-edge-rgb-g),
+      var(--glass-edge-rgb-b),
+      var(--edge-alpha)
+    ),
+    rgba(
+      var(--glass-edge-rgb-r),
+      var(--glass-edge-rgb-g),
+      var(--glass-edge-rgb-b),
+      0
+    ) 65%
+  );
+
+  /* recorte pra ficar só a borda */
+  padding: 1px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+
+/* ===========================================
+   GLASS OVERLAY SUTIL (sempre)
+   =========================================== */
+.card-glass-new::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.02) 40%,
+    rgba(255,255,255,0.06)
+  );
+  opacity: var(--glass-overlay);
+  mix-blend-mode: overlay;
+}
+
+.card-glass-new > * {
+  position: relative;
+  z-index: 1;
+  color: rgba(255,255,255,0.9);
+}
+
+
+/* ===========================================
+   PRESETS
+   =========================================== */
+
+/* Soft: discreto */
+.glass-soft {
+  --glass-bg-r: 12;
+  --glass-bg-g: 12;
+  --glass-bg-b: 16;
+
+  --glass-bg-alpha: 0.45;
+  --glass-border-alpha: 0.16;
+  --glass-blur: 10px;
+
+  --glass-frost: 0.08;
+  --glass-overlay: 0.50;
+
+  --glass-spot-i: 0.20;
+  --glass-edge-i: 0.25;
+
+  --glass-spot-r: 320px;
+  --glass-edge-scale: 0.65;
+
+  /* cores */
+  --glass-spot-rgb-r: 255;
+  --glass-spot-rgb-g: 255;
+  --glass-spot-rgb-b: 255;
+
+  --glass-edge-rgb-r: 150;
+  --glass-edge-rgb-g: 220;
+  --glass-edge-rgb-b: 255;
+}
+
+/* Premium: usando suas configs */
+.glass-premium {
+  --glass-bg-r: 10;
+  --glass-bg-g: 10;
+  --glass-bg-b: 14;
+
+  --glass-bg-alpha: 0.55;
+  --glass-border-alpha: 0.18;
+  --glass-blur: 14px;
+
+  /* frost (um pouco, mas não “milky”) */
+  --glass-frost: 0.05;
+  --glass-overlay: 0.55;
+
+  /* >>> SUAS CONFIGS PEDIDAS <<< */
+  --glass-spot-i: 0.1;
+  --glass-edge-i: 0.55;
+  --glass-spot-r: 450px;
+  --glass-edge-scale: 0.75;
+
+  /* cores (mantém as originais) */
+  --glass-spot-rgb-r: 255;
+  --glass-spot-rgb-g: 255;
+  --glass-spot-rgb-b: 255;
+
+  --glass-edge-rgb-r: 120;
+  --glass-edge-rgb-g: 200;
+  --glass-edge-rgb-b: 255;
+}
+
+/* Neon: mais forte */
+.glass-neon {
+  --glass-bg-r: 8;
+  --glass-bg-g: 8;
+  --glass-bg-b: 12;
+
+  --glass-bg-alpha: 0.62;
+  --glass-border-alpha: 0.22;
+  --glass-blur: 18px;
+
+  --glass-frost: 0.10;
+  --glass-overlay: 0.60;
+
+  --glass-spot-i: 0.70;
+  --glass-edge-i: 0.95;
+
+  --glass-spot-r: 520px;
+  --glass-edge-scale: 0.85;
+
+  /* cores (um pouco mais roxo/neon) */
+  --glass-spot-rgb-r: 255;
+  --glass-spot-rgb-g: 255;
+  --glass-spot-rgb-b: 255;
+
+  --glass-edge-rgb-r: 190;
+  --glass-edge-rgb-g: 120;
+  --glass-edge-rgb-b: 255;
+}
+
+/* Frosted / Milky: bem jateado (esbranquiçado) */
+.glass-frosted {
+  --glass-bg-r: 235;
+  --glass-bg-g: 238;
+  --glass-bg-b: 245;
+
+  --glass-bg-alpha: 0.60;
+  --glass-border-alpha: 0.26;
+  --glass-blur: 18px;
+
+  /* <<< jateado forte >>> */
+  --glass-frost: 0.75;
+  --glass-overlay: 0.70;
+
+  /* frost tint (pode deixar branco puro) */
+  --glass-frost-r: 255;
+  --glass-frost-g: 255;
+  --glass-frost-b: 255;
+
+  /* mantém o comportamento do premium */
+  --glass-spot-i: 0.10;
+  --glass-edge-i: 0.55;
+  --glass-spot-r: 450px;
+  --glass-edge-scale: 0.75;
+
+  --glass-spot-rgb-r: 255;
+  --glass-spot-rgb-g: 255;
+  --glass-spot-rgb-b: 255;
+
+  --glass-edge-rgb-r: 120;
+  --glass-edge-rgb-g: 200;
+  --glass-edge-rgb-b: 255;
+}
+
+/* Button preset (se quiser reaproveitar no botão) */
+.glass-button {
+  --glass-bg-r: 10;
+  --glass-bg-g: 10;
+  --glass-bg-b: 14;
+
+  --glass-bg-alpha: 0.50;
+  --glass-border-alpha: 0.18;
+  --glass-blur: 14px;
+
+  --glass-frost: 0.4;
+  --glass-overlay: 0.55;
+
+  --glass-spot-i: 0.10;
+  --glass-edge-i: 1.00; /* 1.55 pode ficar exagerado; ajuste se quiser */
+  --glass-spot-r: 100px;
+  --glass-edge-scale: 0.75;
+
+  --glass-spot-rgb-r: 255;
+  --glass-spot-rgb-g: 255;
+  --glass-spot-rgb-b: 255;
+
+  --glass-edge-rgb-r: 120;
+  --glass-edge-rgb-g: 200;
+  --glass-edge-rgb-b: 255;
+}
+
+.glass-button2 {
+  --glass-bg-r: 10;
+  --glass-bg-g: 10;
+  --glass-bg-b: 14;
+
+  --glass-bg-alpha: 0.50;
+  --glass-border-alpha: 0.18;
+  --glass-blur: 14px;
+
+  --glass-frost: 0.8;
+  --glass-overlay: 0.55;
+
+  --glass-spot-i: 0.10;
+  --glass-edge-i: 1.00; /* 1.55 pode ficar exagerado; ajuste se quiser */
+  --glass-spot-r: 100px;
+  --glass-edge-scale: 0.75;
+
+  --glass-spot-rgb-r: 255;
+  --glass-spot-rgb-g: 255;
+  --glass-spot-rgb-b: 255;
+
+  --glass-edge-rgb-r: 120;
+  --glass-edge-rgb-g: 200;
+  --glass-edge-rgb-b: 255;
+}
+
+
+/* ===========================================
+   APPLY TO YOUR SECTION (optional)
+   - turns template cards into glass automatically
+   =========================================== */
+.glass-section {
+  .rainbow-box-card.aiwave-service-default {
+    @extend .card-glass-new;
+  }
+
+  .rainbow-box-card.aiwave-service-default .inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* hide old background shapes so they don't fight the glass */
+  .rainbow-box-card.aiwave-service-default .bg-shaped {
+    display: none !important;
+  }
+}
+
+
+/* ===========================================
+   THEME HOOK (opcional)
+   =========================================== */
+[data-theme="light"] {
+  .card-glass-new {
+    --glass-bg-r: 245;
+    --glass-bg-g: 246;
+    --glass-bg-b: 250;
+
+    --glass-bg-alpha: 0.75;
+    --glass-border-alpha: 0.28;
+
+    --glass-frost: 0.30;
+    --glass-overlay: 0.60;
+
+    --glass-spot-i: 0.25;
+    --glass-edge-i: 0.30;
+  }
+}
+
+
+.btn-glass {
+    color: #ffffff;
+    border-radius: 200px;
+}
+.btn-glass:hover {
+    color: #ffffff;
+}
+
+.btn-glass:visited {
+    color: #ffffff;
+}
+
+
+.section-parallax {
+  position: relative;
+  overflow: hidden;
+
+  /* altura mínima */
+  min-height: 70vh;
+
+  /* centralização vertical */
+  display: flex;
+  align-items: center;
+
+  /* padding horizontal continua vindo do container */
+  padding: 60px 0;
+
+  /* parallax vars */
+  --parallax-img: url("/assets/images/bg/parallax-bg.png");
+  --parallax-dim: 0.55;
+}
+
+/* camada do parallax */
+.section-parallax::before {
+  content: "";
+  position: absolute;
+  inset: -12% 0;
+  z-index: 0;
+
+  background-image: var(--parallax-img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  will-change: transform;
+  transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.06);
+}
+
+/* overlay escuro p/ leitura */
+.section-parallax::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background: rgba(0, 0, 0, var(--parallax-dim));
+}
+
+/* conteúdo sempre acima */
+.section-parallax > .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* opcional: garante que o texto centralize mesmo com várias rows */
+.section-parallax .row {
+  width: 100%;
+}
+
+.logo-3d-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px; /* espaço entre logo e texto */
+}
+
+.logo-3d-1 img {
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
