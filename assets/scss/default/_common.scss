@@ -1518,3 +1518,162 @@ $glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
   height: auto;
   display: block;
 }
+
+.card-img-new {
+    position: absolute;
+    bottom: -40px;
+    right: -150px;
+}
+.card-img-new-2 {
+    position: absolute;
+    bottom: -20px;
+    right: -150px;
+}
+.card-with-img {
+    min-height: 620px;
+}
+
+span.badge-1 {
+    color: #b1b1b1;
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: #ffffff2b 1px solid;
+    font-size: 12px;
+    margin-right:7px;
+    margin-bottom:10px;
+}
+
+.stat-icon {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 28px;
+
+  /* glass */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  /* subtle depth */
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+
+  color: #ffffff;
+}
+
+.stat-icon i {
+  font-size: 34px;
+  opacity: 0.95;
+}
+
+/* ===== Cards ===== */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* ===== SVG Background ===== */
+.stat-bg {
+  position: absolute;
+  right: -80px;
+  bottom: -60px;
+  width: 520px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* grid/bars */
+.bg-grid,
+.bg-bars {
+  stroke: rgba(255, 255, 255, 0.10);
+  stroke-width: 2;
+}
+
+/* main line - will be animated by JS */
+.bg-line-main {
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+}
+
+/* glow line - color depends on card type */
+.stat-card[data-bg="risk"] .bg-line-glow {
+  stroke: rgba(255, 77, 79, 0.22);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+}
+
+.stat-card[data-bg="money"] .bg-line-glow {
+  stroke: rgba(245, 183, 0, 0.22);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+}
+
+/* ===== Icon Glass ===== */
+.stat-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25),
+    inset 0 1px 1px rgba(255,255,255,0.35);
+
+  margin: 0 0 24px 0; /* not centered */
+}
+
+.stat-icon i {
+  font-size: 22px;
+  opacity: 0.95;
+}
+
+.stat-icon--danger { color: #ff4d4f; }
+.stat-icon--money  { color: #f5b700; }
+
+/* ===== Typography ===== */
+.stat-number {
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.stat-description {
+  opacity: 0.85;
+  max-width: 460px;
+}
