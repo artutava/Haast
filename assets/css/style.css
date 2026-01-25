@@ -8620,6 +8620,53 @@ span.badge-1 {
   max-width: 460px;
 }
 
+/* container */
+.social-glass {
+  display: flex;
+  gap: 10px;
+}
+
+/* botão */
+.social-glass-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  /* glass */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  opacity: 0.85;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+}
+
+/* ícone */
+.social-glass-btn i {
+  font-size: 15px;
+}
+
+/* hover (bem sutil, enterprise) */
+.social-glass-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+/* foco acessível */
+.social-glass-btn:focus-visible {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.text-white {
+  color: #fff;
+}
+
 /* ========= Forms Styles ========= */
 button,
 [type=button],
