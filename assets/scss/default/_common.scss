@@ -1745,3 +1745,89 @@ span.badge-1 {
 .text-white {
     color:#fff;
 }
+
+
+/* =========================================================
+   HOW IT WORKS — Glass cards + Infinite Chevron Flow
+   ========================================================= */
+
+.howitworks-section{ position: relative; }
+
+.how-wrap{
+  position: relative;
+  overflow: visible;
+}
+
+/* SVG overlay */
+.how-svg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+/* Cards acima do SVG */
+.how-card{
+  position: relative;
+  z-index: 1;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.how-body{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 22px 18px;
+}
+
+.how-icon{
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.how-num{
+  font-size: 12px;
+  letter-spacing: .16em;
+  opacity: .7;
+}
+
+.how-body h4{ font-size: 16px; margin-bottom: 8px; }
+.how-body p{ font-size: 14px; line-height: 1.45; opacity: .72; max-width: 40ch; }
+
+/* ===== Connection fallback line (aparece sempre) ===== */
+.how-conn-fallback{
+  fill: none;
+  stroke: rgba(255,255,255,.14);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: .9;
+}
+
+/* Glow por trás */
+.how-conn-glow{ opacity: .16; }
+
+/* Pattern layer (chevrons) */
+.how-conn-pattern{ stroke-width: 3.2; opacity: 1; }
+
+/* Mobile spacing */
+@media (max-width: 991.98px){
+  .how-cardWrap{ margin-bottom: 72px; }
+  .how-card{ max-width: 360px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .how-svg *{ animation: none !important; }
+}
