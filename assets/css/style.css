@@ -9008,6 +9008,12 @@ textarea.form-control-dark:focus {
   background-position: top center !important;
 }
 
+.header-sticky.sticky {
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background-color: rgba(22, 22, 22, 0.631372549) !important;
+}
+
 /* ========= Forms Styles ========= */
 button,
 [type=button],

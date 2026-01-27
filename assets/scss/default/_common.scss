@@ -2081,3 +2081,7 @@ textarea.form-control-dark:focus {
     background-position: top center !important;
 }
 
+.header-sticky.sticky {
+    backdrop-filter: blur(20px);
+    background-color: #161616a1 !important;
+}
