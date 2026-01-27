@@ -2085,3 +2085,54 @@ textarea.form-control-dark:focus {
     backdrop-filter: blur(20px);
     background-color: #161616a1 !important;
 }
+
+
+.parallax-2 {
+  --parallax-img: url("/assets/images/bg/haast-parallax-2.png") !important;
+  --parallax-dim: 0.55;
+  filter: saturate(0);
+}
+
+/* ================================
+   ROADMAP ICON STYLES
+   ================================ */
+
+/* CHECK ICON — glowing white */
+.changelog_info .c_version i.fa-check {
+    color: #ffffff;
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.6),
+        0 0 12px rgba(255, 255, 255, 0.4),
+        0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Optional: subtle pulse (remove if you want static) */
+@keyframes glowPulse {
+    0% {
+        text-shadow:
+            0 0 6px rgba(255, 255, 255, 0.5),
+            0 0 12px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        text-shadow:
+            0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 18px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.changelog_info .c_version i.fa-check {
+    animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+
+/* LOADING ICON — white/grey, NO glow */
+.changelog_info .c_version.bg-yellow i.fa-loader {
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: none;
+}
+
+/* Optional: softer background for loading state */
+.changelog_info .c_version.bg-yellow {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+}

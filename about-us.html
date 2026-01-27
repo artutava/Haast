@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
+
+    <title>Haast Autonomous</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.png">
+    <!-- CSS ============================================ -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="assets/css/plugins/animation.css">
+    <link rel="stylesheet" href="assets/css/plugins/slick.css">
+    <link rel="stylesheet" href="assets/css/plugins/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/prism.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <main class="page-wrapper">
+
+        <div id="my_switcher" class="my_switcher">
+            <ul>
+                <li>
+                    <a href="javascript: void(0);" data-theme="light" class="setColor light">
+                        <img src="assets/images/light/switch/sun-01.svg" alt="Sun images"><span title="Light Mode"> Light</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
+                        <img src="assets/images/light/switch/vector.svg" alt="Vector Images"><span title="Dark Mode"> Dark</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Start Header Area  -->
+        <header class="rainbow-header header-default header-transparent header-sticky">
+            <div class="container position-relative">
+                <div class="row align-items-center row--0">
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img class="logo-light" src="assets/images/logo/logo.png" alt="ChatBot Logo">
+                                <img class="logo-dark" src="assets/images/light/logo/logo-dark.png" alt="ChatBot Logo">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 d-none d-lg-block">
+                        <nav class="mainmenu-nav d-none d-lg-flex justify-content-center">
+                            <ul class="mainmenu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/about-us.html">About us</a></li>
+                                <li><a href="#">Product</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+
+
+
+
+
+
+
+                        </nav>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6 position-static">
+                        <div class="header-right">
+
+                            <!-- Start Header Btn  -->
+                            <div class="header-btn">
+                                <a class="rainbow-gradient-btn"  href="#"><span>Contact us</span></a>
+                            </div>
+                            <!-- End Header Btn  -->
+
+                            <!-- Start Mobile-Menu-Bar -->
+                            <div class="mobile-menu-bar ml--5 d-flex justify-content-end d-lg-none">
+                                <div class="hamberger">
+                                    <button class="hamberger-button">
+                                        <i class="fa-sharp fa-regular fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Start Mobile-Menu-Bar -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header Area  -->
+        <div class="popup-mobile-menu">
+            <div class="inner-popup">
+                <div class="header-top">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img class="logo-light" src="assets/images/logo/logo.png" alt="ChatBot Logo">
+                            <img class="logo-dark" src="assets/images/light/logo/logo-dark.png" alt="ChatBot Logo">
+                        </a>
+                    </div>
+                    <div class="close-menu">
+                        <button class="close-button">
+                            <i class="fa-sharp fa-regular fa-x"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <ul class="mainmenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="has-dropdown has-menu-child-item position-relative"><a href="#">Tools <i class="fa-regular fa-chevron-down"></i></a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="text-generator.html">
+                                        <span>Text Generator</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="image-generator.html">
+                                        <span>Image Generator</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="code-generator.html">
+                                        <span>Code Generator</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="image-editor.html">
+                                        <span>Image Editor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="vedio-generator.html">
+                                        <span>Vedio Generator</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="email-generator.html">
+                                        <span>Email Generator</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" class="disabled" aria-disabled="true">
+                                        <span>Audio Generator</span>
+                                        <div class="rainbow-badge-card badge-sm ml--5">COMING</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" class="disabled" aria-disabled="true">
+                                        <span>Edu. feedback</span>
+                                        <div class="rainbow-badge-card badge-sm ml--5">COMING</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" class="disabled" aria-disabled="true">
+                                        <span>Website Generator</span>
+                                        <div class="rainbow-badge-card badge-sm ml--5">COMING</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="with-megamenu has-menu-child-item"><a href="#">Pages <i class="fa-regular fa-chevron-down"></i></a>
+                            <div class="rainbow-megamenu">
+                                <div class="wrapper">
+                                    <div class="row row--0">
+                                        <div class="col-lg-3 single-mega-item">
+                                            <ul class="mega-menu-item">
+                                                <li>
+                                                    <h3 class="rbt-short-title">Inner Pages</h3>
+                                                </li>
+                                                <li>
+                                                    <a href="styleguide.html">
+                                                        <span>Style Guide</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Hot</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="blog.html">
+                                                        <span>Blog</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="blog-details.html">
+                                                        <span>Blog Details</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="pricing.html">
+                                                        <span>Pricing</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="contact.html">
+                                                        <span>Contact</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="signin.html">
+                                                        <span>Sign In</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="signup.html">
+                                                        <span>Sign Up</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="Team.html">
+                                                        <span>Team</span>
+
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="terms-policy.html">
+                                                        <span>Terms & Policy</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="privacy-policy.html">
+                                                        <span>Privacy Policy</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-lg-3 single-mega-item">
+                                            <ul class="mega-menu-item">
+                                                <li>
+                                                    <h3 class="rbt-short-title">DASHBOARD PAGES</h3>
+                                                </li>
+                                                <li>
+                                                    <a href="profile-details.html">
+                                                        <span>Profile</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="notification.html">
+                                                        <span>Notification</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="chat-export.html">
+                                                        <span>Chat Export</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="appearance.html">
+                                                        <span>Apperance</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="plans-billing.html">
+                                                        <span>Plans and Billing</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="sessions.html">
+                                                        <span>Sessions</span>
+
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="application.html">
+                                                        <span>Application</span>
+
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="release-notes.html">
+                                                        <span>Release notes</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="help.html">
+                                                        <span>Help & FAQs</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-lg-3 single-mega-item">
+                                            <ul class="mega-menu-item br--0">
+                                                <li>
+                                                    <h3 class="rbt-short-title">Upcoming Advance Elements</h3>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Product Description</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Coming</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Youtube Vedio to Post</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Coming</div>
+
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Grammar Check</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Coming</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Generate From RSS</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Coming</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Vedio Script</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Coming</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Audio to Text</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Coming</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Subscription</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Coming</div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Maintanence</span>
+                                                        <div class="rainbow-badge-card badge-sm ml--5">Coming</div>
+
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="disabled">
+                                                        <span>Coming Soon</span>
+
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-lg-3 single-mega-item">
+                                            <div class="header-menu-img">
+                                                <img src="assets/images/menu-img/menu-img-2.png" alt="Menu Split Image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="roadmap.html">Roadmap</a></li>
+                        <li><a href="utilize.html">How to use</a></li>
+                    </ul>
+
+
+
+
+
+
+
+
+                    <div class="rbt-sm-separator"></div>
+                    <div class="rbt-default-sidebar-wrapper">
+                        <nav class="mainmenu-nav">
+                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                <li><a href="text-generator.html"><i
+                                    class="fa-sharp fa-regular fa-monitor"></i><span>Welcome</span></a></li>
+                                <li><a href="plans-billing.html"><i class="fa-sharp fa-regular fa-briefcase"></i><span>Manage
+                                    Subsription</span></a></li>
+                            </ul>
+                            <div class="rbt-sm-separator"></div>
+                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                <li><a href="text-generator.html"><img src="assets/images/generator-icon/text.png" alt="AI Generator"><span>Text Generator</span></a></li>
+                                <li><a href="image-generator.html"><img src="assets/images/generator-icon/photo.png" alt="AI Generator"><span>Image Generator</span>
+                                        <div class="rainbow-badge-card badge-sm ml--10">Hot</div>
+                                    </a></li>
+                                <li><a href="code-generator.html"><img src="assets/images/generator-icon/code-editor.png" alt="AI Generator"><span>Code Generator</span></a></li>
+                                <li><a href="image-editor.html"><img src="assets/images/generator-icon/photo.png" alt="AI Generator"><span>Image Editor</span></a></li>
+                                <li><a href="vedio-generator.html"><img src="assets/images/generator-icon/video-camera.png" alt="AI Generator"><span>Vedio Generator</span></a></li>
+                                <li><a href="email-generator.html"><img src="assets/images/generator-icon/email.png" alt="AI Generator"><span>Email Generator</span></a></li>
+                                <li><a tabindex="-1" class="disabled" aria-disabled="true" role="button"><img src="assets/images/generator-icon/website-design.png" alt="AI Generator"><span>Website Generator</span></a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="rbt-sm-separator"></div>
+
+                        <nav class="mainmenu-nav">
+                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                <li class="has-submenu"><a class="collapse-btn collapsed" data-bs-toggle="collapse" href="#collapseExampleMenu" role="button" aria-expanded="false" aria-controls="collapseExampleMenu"><i
+                                    class="fa-sharp fa-solid fa-circle-plus"></i><span>Setting</span></a>
+                                    <div class="collapse" id="collapseExampleMenu">
+                                        <ul class="submenu rbt-default-sidebar-list">
+                                            <li>
+                                                <a href="profile-details.html">
+                                                    <i class="fa-sharp fa-regular fa-user"></i>
+                                                    <span>Profile Details</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="notification.html">
+                                                    <i class="fa-sharp fa-regular fa-shopping-bag"></i>
+                                                    <span>Notification</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="chat-export.html">
+                                                    <i class="fa-sharp fa-regular fa-users"></i>
+                                                    <span>Chat Export</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="appearance.html">
+                                                    <i class="fa-sharp fa-regular fa-home"></i>
+                                                    <span>Apperance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="plans-billing.html">
+                                                    <i class="fa-sharp fa-regular fa-briefcase"></i>
+                                                    <span>Plans and Billing</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="sessions.html">
+                                                    <i class="fa-sharp fa-regular fa-users"></i>
+                                                    <span>Sessions</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="application.html">
+                                                    <i class="fa-sharp fa-regular fa-list"></i>
+                                                    <span>Application</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="#"><i class="fa-sharp fa-regular fa-award"></i><span>Help & FAQ</span></a></li>
+                            </ul>
+                            <div class="rbt-sm-separator"></div>
+                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                <li><a href="release-notes.html"><i class="fa-sharp fa-regular fa-bell"></i><span>Release
+                                    notes</span></a></li>
+                                <li><a href="terms-policy.html"><i class="fa-sharp fa-regular fa-briefcase"></i><span>Terms &
+                                    Policy</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Start Header Btn  -->
+                <div class="header-btn d-block d-md-none">
+                    <a class="btn-default @@btnClass" target="_blank" href="text-generator.html">Get Started Free</a>
+                </div>
+                <!-- End Header Btn  -->
+            </div>
+        </div>
+
+        <!-- Imroz Preloader -->
+        <div class="preloader">
+            <div class='loader'>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+            </div>
+        </div>
+
+
+
+<!-- Start Breadcrumb Area  -->
+        <div class="main-content">
+            <!-- Start Breadcarumb area  -->
+            <div class="breadcrumb-area breadcarumb-style-1 pt--180 pb--100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcrumb-inner text-center">
+                                <h3 class="title h3">About us</h3>
+                                <ul class="page-list">
+                                    <li class="rainbow-breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="rainbow-breadcrumb-item active text-white">About us</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Breadcarumb area  -->
+        </div>
+<!--Start dobra inicial-->
+
+<div class="section-dobra-padrao d-flex align-items-center mb--60">
+
+     <div class="container">
+                <div class="row align-items-center w-100">
+                    <div class="col-lg-6">
+                        <div class="section-title text-left mb-5" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
+                            <h4 class="subtitle">
+                                <span class="theme-gradient">About us</span>
+                            </h4>
+                            <h2 class="title mb--60">
+                                Pioneering the future of medical delivery
+                            </h2>
+                            <p>
+                             Healthcare has grown larger, more distributed, and more complex than ever before. Hospital systems now span cities and regions, connecting flagship medical centers with dozens — sometimes hundreds — of satellite facilities. This expansion has improved access to care, but it has also created a critical operational gap: the movement of time-sensitive medical materials between facilities was never designed to scale this way.
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="default_imgs_haast" src="assets/images/bg/dark-otd.png">
+                    </div>
+                </div>
+            </div>
+
+</div>
+
+
+
+<!--End dobra inicial-->
+
+
+
+
+ 
+
+        <!-- Start parallax-->
+         <div class="section-parallax parallax-2">
+            <div class="container">
+                <div class="row">
+                    <div class="logo-3d-1">
+                        <img src="assets/images/bg/haast_emblem_white.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center pb--60" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
+                          
+                            <h2 class="title mb--0">Haast approaches organ transport as a system-level challenge, integrating aircraft, autonomy, and operational control into a single platform</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+         </div>
+         <!-- End parallax-->
+
+ 
+
+  
+
+   
+
+       <!-- Start The problem 2  -->
+        <div class="rainbow-service-area rainbow-section-gap rainbow-section-gapBottom-big">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-left" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
+                            <h4 class="subtitle">
+                                <span class="theme-gradient">The Problem</span>
+                            </h4>
+                            <h2 class="title mb--60">
+                                Healthcare Logistics is broken
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="service-wrapper rainbow-service-slider-actvation slick-grid-15 rainbow-slick-dot rainbow-gradient-arrows h-100">
+                            <div class="slide-single-layout h-100">
+                                <div class="card card-glass-new js-glass glass-premium h-100">
+                                    <div class="card-body">
+                                        
+                                        <div class="description centered-shape">
+                                            <h5 class="title">The Organ Transport Crisis</h5>
+                                            <p class="desc">Nearly half of all viable organs are lost each year due to avoidable transport delays. Hospitals depend on slow ground routes or costly charter flights, wasting precious minutes. For hearts and lungs, even a short delay can mean the difference between life and loss.</p>
+                                            <a class="read-more-btn" href="#">Explore More <span><i
+                                                        class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="slide-single-layout h-100">
+                                <div class="card card-glass-new js-glass glass-premium h-100">
+                                    <div class="card-body">
+                                        
+                                        <div class="description centered-shape">
+                                            <h5 class="title">Outdated, Fragmented Logistics</h5>
+                                            <p class="desc">Organ transport relies on multiple handoffs between couriers, airlines, and medical teams. This fragmented chain creates delays, miscommunication, and zero real-time visibility. There is no centralized system to ensure speed, control, and reliability.</p>
+                                            <a class="read-more-btn" href="#">Explore More <span><i
+                                                        class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="slide-single-layout h-100">
+                                <div class="card card-glass-new js-glass glass-premium h-100">
+                                    <div class="card-body">
+                                        
+                                        <div class="description centered-shape">
+                                            <h5 class="title">Limited Access for Rural Patients</h5>
+                                            <p class="desc">Patients in rural and remote regions face fewer transplant opportunities because of geographic limitations. Smaller hospitals frequently lack access to fast, reliable transport, leading to unequal outcomes where survival depends on location rather than medical need.</p>
+                                            <a class="read-more-btn" href="#">Explore More <span><i
+                                                        class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="slide-single-layout h-100">
+                                <div class="card card-glass-new js-glass glass-premium h-100">
+                                    <div class="card-body">
+                                        
+                                        <div class="description centered-shape">
+                                            <h5 class="title">Limited Access for Rural Patients</h5>
+                                            <p class="desc">Patients in rural and remote regions face fewer transplant opportunities because of geographic limitations. Smaller hospitals frequently lack access to fast, reliable transport, leading to unequal outcomes where survival depends on location rather than medical need.</p>
+                                            <a class="read-more-btn" href="#">Explore More <span><i
+                                                        class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                           
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End The problem  -->
+
+  
+<!-- Start Roadmap Area  -->
+<div class="roadmap-section rainbow-section-gap-big rainbow-section-gapBottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center pb--60" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
+                    <h4 class="subtitle">
+                        <span class="theme-gradient">Our Journey</span>
+                    </h4>
+                    <h2 class="title mb--0">Haast Autonomous Roadmap</h2>
+                    <p class="mt--20 ">
+                        From early concept to real-world validation, our roadmap reflects a disciplined approach to building autonomous healthcare logistics — prioritizing safety, regulatory readiness, and measurable operational progress at every stage.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Founded -->
+        <div class="row changelog_info">
+            <div class="col-lg-3 changelog_date">
+                <div class="c_date">
+                    <h6>Company Founded</h6>
+                    <p>2025</p>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="version_info">
+                    <div class="c_version">
+                        <i class="fa-duotone fa-check"></i>
+                    </div>
+                    <div class="line bottom_half"></div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="changelog_content">
+                    <p class="text">
+                        Haast Autonomous was founded to rethink healthcare logistics through autonomous aerial delivery.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- First Prototype Flight -->
+        <div class="row changelog_info">
+            <div class="col-lg-3 changelog_date">
+                <div class="c_date">
+                    <h6>First Prototype Flight</h6>
+                    <p>2025</p>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="version_info">
+                    <div class="c_version">
+                        <i class="fa-duotone fa-check"></i>
+                    </div>
+                    <div class="line bottom_half"></div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="changelog_content">
+                    <p class="text">
+                        Successfully completed autonomous delivery test flights.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAA Certification -->
+        <div class="row changelog_info">
+            <div class="col-lg-3 changelog_date">
+                <div class="c_date">
+                    <h6>FAA Certification</h6>
+                    <p>2025</p>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="version_info">
+                    <div class="c_version">
+                        <i class="fa-duotone fa-check"></i>
+                    </div>
+                    <div class="line bottom_half"></div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="changelog_content">
+                    <p class="text">
+                        Achieved FAA Part 107 certification for commercial operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- First Hospital Partner -->
+        <div class="row changelog_info">
+            <div class="col-lg-3 changelog_date">
+                <div class="c_date">
+                    <h6>First Hospital Partner</h6>
+                    <p>2025</p>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="version_info">
+                    <div class="c_version">
+                        <i class="fa-duotone fa-check"></i>
+                    </div>
+                    <div class="line bottom_half"></div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="changelog_content">
+                    <p class="text">
+                        Secured initial hospital partner for pilot deployments.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Expansion -->
+        <div class="row changelog_info">
+            <div class="col-lg-3 changelog_date">
+                <div class="c_date">
+                    <h6>Network Expansion</h6>
+                    <p>2025</p>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="version_info">
+                    <div class="c_version">
+                        <i class="fa-duotone fa-check"></i>
+                    </div>
+                    <div class="line bottom_half"></div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="changelog_content">
+                    <p class="text">
+                        Expanded operational network and pilot routes.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pre-seed Funding (ONLY ONE WITH LOADING) -->
+        <div class="row changelog_info">
+            <div class="col-lg-3 changelog_date">
+                <div class="c_date">
+                    <h6>Pre-Seed Funding</h6>
+                    <p>2026</p>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="version_info">
+                    <div class="c_version bg-white">
+                        <i class="fa-duotone fa-loader"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="changelog_content">
+                    <p class="text">
+                        Raising pre-seed capital to accelerate platform development.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End Roadmap Area  -->
+
+
+
+
+        <!-- Start Team -->
+            <div class="rainbow-service-area rainbow-section-gap pt--60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center pb--60" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
+                                <h4 class="subtitle">
+                                    <span class="theme-gradient">Our Team</span>
+                                </h4>
+                                <h2 class="title mb--0">Leadership</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row--10 align-items-stretch justify-content-center mt--60">
+
+                    
+
+                        <!-- Team Member -->
+                        <div class="col-lg-3 mb-4">
+                            <div class="card card-glass-new js-glass glass-premium h-100 p-0">
+                                <div class="glass-photo">
+                                    <img src="assets/images/team/team-3.png">
+                                </div>
+                                
+                                <div class="card-body text-left p-5">
+                                    <h4 class="mb-1">Ege Halac</h4>
+                                    <span class="theme-gradient">CEO</span>
+                                    <p class="mt-3">
+                                        Expertise in logistics, regulatory operations, and large-scale deployment.
+                                    </p>
+                                    <div class="social-glass">
+                                        <a href="https://www.linkedin.com/company/seu-linkedin"
+                                            target="_blank"
+                                            aria-label="LinkedIn"
+                                            class="social-glass-btn">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+
+                                        <a href="https://www.instagram.com/seu-instagram"
+                                            target="_blank"
+                                            aria-label="Instagram"
+                                            class="social-glass-btn">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team Member -->
+                        <!-- Team Member -->
+                        <div class="col-lg-3 mb-4">
+                            <div class="card card-glass-new js-glass glass-premium h-100 p-0">
+                                <div class="glass-photo">
+                                    <img src="assets/images/team/team-2.png">
+                                </div>
+                                
+                                <div class="card-body text-left p-5">
+                                    <h4 class="mb-1">Jason Chen</h4>
+                                    <span class="theme-gradient">COO</span>
+                                    <p class="mt-3">
+                                        Expertise in logistics, regulatory operations, and large-scale deployment.
+                                    </p>
+                                    <div class="social-glass">
+                                        <a href="https://www.linkedin.com/company/seu-linkedin"
+                                            target="_blank"
+                                            aria-label="LinkedIn"
+                                            class="social-glass-btn">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+
+                                        <a href="https://www.instagram.com/seu-instagram"
+                                            target="_blank"
+                                            aria-label="Instagram"
+                                            class="social-glass-btn">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team Member -->
+                        <!-- Team Member -->
+                        <div class="col-lg-3 mb-4">
+                            <div class="card card-glass-new js-glass glass-premium h-100 p-0">
+                                <div class="glass-photo">
+                                    <img src="assets/images/team/team-1.png">
+                                </div>
+                                
+                                <div class="card-body text-left p-5">
+                                    <h4 class="mb-1">Santiago Brent</h4>
+                                    <span class="theme-gradient">CTO</span>
+                                    <p class="mt-3">
+                                        Expertise in logistics, regulatory operations, and large-scale deployment.
+                                    </p>
+                                    <div class="social-glass">
+                                        <a href="https://www.linkedin.com/company/seu-linkedin"
+                                            target="_blank"
+                                            aria-label="LinkedIn"
+                                            class="social-glass-btn">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+
+                                        <a href="https://www.instagram.com/seu-instagram"
+                                            target="_blank"
+                                            aria-label="Instagram"
+                                            class="social-glass-btn">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team Member -->
+
+                    </div>
+                </div>
+            </div>
+        <!-- End Team -->
+
+
+        <!-- Start Solutions  -->
+            <div class="rainbow-service-area rainbow-section-gap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center pb--60" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
+                                <h4 class="subtitle">
+                                    <span class="theme-gradient">Solutions</span>
+                                </h4>
+                                <h2 class="title mb--0">Purpose-built for healthcare</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                    <div class="row row--10 align-items-stretch mt--60">
+                        
+                        <div class="col-lg-3 mb-4">
+                            <div class="card card-glass-new js-glass glass-premium h-100">
+                                <div class="card-body">
+                                    <div class="stat-icon mb-5">
+                                        <i class="fa-thin fa-network-wired"></i>
+                                    </div>
+                                    <span class="theme-gradient">Inter-Facility Transport</span>
+                                    <h4>Health Systems</h4>
+                                    <p>
+                                        Move supplies, specimens, and medications between facilities faster than ever.
+                                    </p>
+                                
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-3 mb-4">
+                            <div class="card card-glass-new js-glass glass-premium h-100">
+                                <div class="card-body">
+                                    <div class="stat-icon mb-5">
+                                        <i class="fa-thin fa-vial"></i>
+                                    </div>
+                                    <span class="theme-gradient">Rapid Specimen Delivery</span>
+                                    <h4>Labs & Diagnostic</h4>
+                                    <p>
+                                        Time-sensitive specimen transport with complete chain-of-custody.
+                                    </p>
+                                
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-3 mb-4">
+                            <div class="card card-glass-new js-glass glass-premium h-100 ">
+                                <div class="card-body">
+                                    <div class="stat-icon mb-5">
+                                        <i class="fa-thin fa-capsules"></i>
+                                    </div>
+                                    <span class="theme-gradient">Same-Day Prescription Delivery</span>
+                                    <h4>Pharmacy</h4>
+                                    <p>
+                                        Enable same-day delivery for prescriptions and specialty drugs.
+                                    </p>
+                                
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-3 mb-4">
+                            <div class="card card-glass-new js-glass glass-premium h-100">
+                                <div class="card-body">
+                                    <div class="stat-icon mb-5">
+                                        <i class="fa-thin fa-heart"></i>
+                                    </div>
+                                    <span class="theme-gradient">Time-Critical Transport</span>
+                                    <h4>Transplant & Biologics</h4>
+                                    <p>
+                                        Purpose-built solutions for organ transport, cell therapies, and time-critical biologics.
+                                    </p>
+                                
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        <!-- End Solutions  -->
+
+
+
+<!--Start Contact-->
+
+<div class="section-dobra-padrao d-flex align-items-center  section-contact mt--60">
+    
+
+     <div class="container">
+                <div class="row align-items-center w-100">
+                    <div class="col-lg-6">
+                        <div class="section-title text-left pb-5" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
+                            <h4 class="subtitle">
+                                <span class="theme-gradient">Get Started</span>
+                            </h4>
+                            <h2 class="title mb--60">
+                                Ready to transform your logistics?
+                            </h2>
+                            <p>
+                              Let's discuss how Haast can integrate autonomous drone delivery into your healthcare operations.
+                            </p>
+                             
+                                        
+                                           <div class="social-glass align-items-center">
+                                                <a href="https://www.linkedin.com/company/seu-linkedin"
+                                                    target="_blank"
+                                                    aria-label="LinkedIn"
+                                                    class="social-glass-btn">
+                                                    <i class="fa-sharp fa-regular fa-envelope text-white"></i>
+                                                </a>
+                                                <a href="#">contact@haastautonomous.com</a>
+                                           </div> 
+                                           
+                                            
+                                    
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card card-glass-new js-glass glass-premium-giant">
+                            <div class="card-body">
+
+                                <form class="contact-form-dark">
+
+                                    <div class="mb-3 pt-4">
+                                        <label for="name" class="form-label">Full name</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control form-control-dark" 
+                                            id="name" 
+                                            placeholder="Your name"
+                                        >
+                                    </div>
+
+                                    <div class="mb-3 pt-4">
+                                        <label for="email" class="form-label">Email address</label>
+                                        <input 
+                                            type="email" 
+                                            class="form-control form-control-dark" 
+                                            id="email" 
+                                            placeholder="you@email.com"
+                                        >
+                                    </div>
+
+                                    <div class="mb-3 pt-4">
+                                        <label for="company" class="form-label">Company</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control form-control-dark" 
+                                            id="company" 
+                                            placeholder="Company name (optional)"
+                                        >
+                                    </div>
+
+                                    <div class="mb-4 pt-4">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea 
+                                            class="form-control form-control-dark" 
+                                            id="message" 
+                                            rows="4"
+                                            placeholder="Tell us about your project"
+                                        ></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn-glass card-glass-new js-glass glass-button w-100 mt-4">
+                                        Contact us
+                                    </button>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                     </div>
+                </div>
+    </div>
+
+</div>
+
+
+<!--End Contact-->
+
+
+        <!-- Start Brand Area -->
+        <div class="rainbow-brand-area rainbow-section-gap">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-lg-12 mt--10">
+                        <ul class="brand-list brand-style-2">
+                            <li><a href="#"><img src="assets/images/brand/rice.png" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="assets/images/brand/oedk.png" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="assets/images/brand/musc.png" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="assets/images/brand/methodist.png" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="assets/images/brand/mit.png" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="assets/images/brand/lilie.png" alt="Brand Image"></a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-shape-left">
+                <img src="assets/images/bg/bg-shape-two.png" alt="Bg shape">
+            </div>
+        </div>
+
+       
+
+        <!-- Start Footer Area  -->
+        <footer class="rainbow-footer footer-style-default footer-style-3 position-relative">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="rainbow-footer-widget">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img class="logo-light" src="assets/images/logo/logo.png" alt="ChatBot Logo">
+                                        <img class="logo-dark" src="assets/images/logo/logo.png" alt="ChatBot Logo">
+                                    </a>
+                                </div>
+                                <p class="b1 desc-text">Healthcare delivery, reimagined
+                            </p>
+                                <h6 class="subtitle">Join a Newsletter</h6>
+                                <form class="newsletter-form" action="#">
+                                    <div class="form-group">
+                                        <input type="email" placeholder="Enter Your Email Here">
+                                        <button class="btn-default bg-solid-primary" type="submit"><i
+                                        class="fa-sharp fa-regular fa-arrow-right"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                            <div class="rainbow-footer-widget">
+                                <div class="widget-menu-bottom">
+                                    <h4 class="title">Resources</h4>
+                                    <div class="inner">
+                                        <ul class="footer-link link-hover">
+                                            <li><a href="#">Home</a></li>
+                                            <li><a href="#">About us</a></li>
+                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="#">Brochure</a></li>
+                                            <li><a href="#">Contact us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="rainbow-footer-widget">
+                                <div class="widget-menu-top">
+                                    <h4 class="title">Contact</h4>
+                                    <div class="inner">
+                                        <ul class="footer-link contact-link">
+                                            <li><i class="contact-icon fa-regular fa-location-dot text-white"></i><a href="#">Houston, TX 18002 <br>United States</a></li>
+                                            <li><i class="contact-icon fa-sharp fa-regular fa-envelope text-white"></i><a href="#">contact@haastautonomous.com</a></li>
+                                            
+                                        </ul>
+                                        <div class="social-glass">
+  <a href="https://www.linkedin.com/company/seu-linkedin"
+     target="_blank"
+     aria-label="LinkedIn"
+     class="social-glass-btn">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+
+  <a href="https://www.instagram.com/seu-instagram"
+     target="_blank"
+     aria-label="Instagram"
+     class="social-glass-btn">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer Area  -->
+        <!-- Start Copy Right Area  -->
+        <div class="copyright-area copyright-style-one">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-8 col-sm-12 col-12">
+                        <div class="copyright-left">
+                            <ul class="ft-menu link-hover">
+                                <li>
+                                    <a href="privacy-policy.html">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="terms-policy.html">Terms And Condition</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-sm-12 col-12">
+                        <div class="copyright-right text-center text-lg-end">
+                            <p class="copyright-text">Developed by <a href="https://sircrux.com" class="btn-read-more"><span>SirCruX Studios</span></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copy Right Area  -->
+        <div class="rbt-progress-parent">
+            <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+    </main>
+    <!-- All Scripts  -->
+
+    <!-- JS
+    ============================================ -->
+    <div class="rbt-progress-parent">
+        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+    <!-- JS
+============================================ -->
+    <script src="assets/js/vendor/modernizr.min.js"></script>
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/waypoint.min.js"></script>
+    <script src="assets/js/vendor/wow.min.js"></script>
+    <script src="assets/js/vendor/counterup.min.js"></script>
+    <script src="assets/js/vendor/sal.min.js"></script>
+    <script src="assets/js/vendor/slick.min.js"></script>
+    <script src="assets/js/vendor/text-type.js"></script>
+    <script src="assets/js/vendor/prism.js"></script>
+    <script src="assets/js/vendor/bootstrap-select.min.js"></script>
+    <script src="assets/js/vendor/backto-top.js"></script>
+    <!-- Light Mode Switcher -->
+    <script src="assets/js/vendor/js.cookie.js"></script>
+    <script src="assets/js/vendor/jquery.style.swicher.js"></script>
+
+    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+
+<script>
+  (() => {
+    const cards = Array.from(document.querySelectorAll(".js-glass"));
+    if (!cards.length) return;
+
+    let raf = null;
+    let mx = window.innerWidth / 2;
+    let my = window.innerHeight / 2;
+
+    const clamp01 = (v) => Math.max(0, Math.min(1, v));
+
+    // distance from point (mx,my) to the rectangle of the element
+    // returns 0 if the point is inside the rect
+    const distToRect = (x, y, r) => {
+      const dx = (x < r.left) ? (r.left - x) : (x > r.right ? (x - r.right) : 0);
+      const dy = (y < r.top)  ? (r.top - y)  : (y > r.bottom ? (y - r.bottom) : 0);
+      return Math.hypot(dx, dy);
+    };
+
+    // reads CSS var like "360px" -> 360
+    const readCssPxVar = (el, varName, fallback) => {
+      const raw = getComputedStyle(el).getPropertyValue(varName).trim();
+      const n = parseFloat(raw);
+      return Number.isFinite(n) ? n : fallback;
+    };
+
+    // tweak the "feel" here:
+    // t*t = premium, t*t*t = tighter, Math.sqrt(t) = more ambient
+    const ease = (t) => t * t;
+
+    const update = () => {
+      raf = null;
+
+      for (const el of cards) {
+        const r = el.getBoundingClientRect();
+
+        // spotlight center in local coords (px, can be negative)
+        const lx = mx - r.left;
+        const ly = my - r.top;
+
+        el.style.setProperty("--sx", lx + "px");
+        el.style.setProperty("--sy", ly + "px");
+
+        // use the SAME radius as the visual one (--glass-spot-r),
+        // so presets (soft/premium/neon) automatically affect falloff range
+        const R = readCssPxVar(el, "--glass-spot-r", 360);
+
+        // proximity 0..1 based on distance to element rect
+        const d = distToRect(mx, my, r);
+        const t = clamp01(1 - d / R);
+        const a = ease(t);
+
+        el.style.setProperty("--spot-a", a.toFixed(4));
+        el.style.setProperty("--edge-a", a.toFixed(4));
+      }
+    };
+
+    const scheduleUpdate = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+
+    document.addEventListener(
+      "pointermove",
+      (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        scheduleUpdate();
+      },
+      { passive: true }
+    );
+
+    // keep accurate when layout changes
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", () => {
+      mx = Math.min(mx, window.innerWidth);
+      my = Math.min(my, window.innerHeight);
+      scheduleUpdate();
+    }, { passive: true });
+
+    // initial paint
+    scheduleUpdate();
+  })();
+</script>
+
+<script>
+(() => {
+  const sections = Array.from(document.querySelectorAll(".section-parallax"));
+  if (!sections.length) return;
+
+  let raf = null;
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+  const update = () => {
+    raf = null;
+    const vh = window.innerHeight;
+
+    for (const el of sections) {
+      const rect = el.getBoundingClientRect();
+
+      // só calcula quando está perto da tela
+      if (rect.bottom < -200 || rect.top > vh + 200) continue;
+
+      // progresso do parallax (0..1) enquanto atravessa a viewport
+      const t = (rect.top + rect.height) / (vh + rect.height);
+      const p = clamp(1 - t, 0, 1);
+
+      // intensidade do movimento (px). Ajuste aqui.
+      const strength = 200; // 40..120
+      const y = (p - 0.5) * strength * 2; // -strength..+strength
+
+      el.style.setProperty("--parallax-y", `${y}px`);
+      el.style.setProperty("--parallax-scale", `1.06`);
+    }
+  };
+
+  const schedule = () => {
+    if (!raf) raf = requestAnimationFrame(update);
+  };
+
+  // aplica usando CSS vars no ::before
+  const style = document.createElement("style");
+  style.textContent = `
+    .section-parallax::before {
+      transform: translate3d(0, var(--parallax-y, 0px), 0) scale(var(--parallax-scale, 1.06));
+    }
+  `;
+  document.head.appendChild(style);
+
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule, { passive: true });
+
+  schedule();
+})();
+</script>
+
+<script>
+(function () {
+  const section = document.getElementById("problem-stats");
+  if (!section) return;
+
+  const counters = section.querySelectorAll(".countup");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function animateCounter(el) {
+    const target   = Number(el.dataset.target || 0);
+    const prefix   = el.dataset.prefix || "";
+    const suffix   = el.dataset.suffix || "";
+    const duration = Number(el.dataset.duration || 1500);
+
+    if (reduceMotion) {
+      el.textContent = `${prefix}${target}${suffix}`;
+      return;
+    }
+
+    let startTime = null;
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function update(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased    = easeOutCubic(progress);
+      const value    = Math.round(target * eased);
+
+      el.textContent = `${prefix}${value}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = `${prefix}${target}${suffix}`;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          counters.forEach(el => {
+            if (el.dataset.animated) return;
+            el.dataset.animated = "true";
+            animateCounter(el);
+          });
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  observer.observe(section);
+})();
+</script>
+
+
+<script>
+(function () {
+  const section = document.getElementById("problem-stats");
+  if (!section) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function animateCounter(el) {
+    const target   = Number(el.dataset.target || 0);
+    const prefix   = el.dataset.prefix || "";
+    const suffix   = el.dataset.suffix || "";
+    const duration = Number(el.dataset.duration || 1500);
+
+    if (reduceMotion) {
+      el.textContent = `${prefix}${target}${suffix}`;
+      return;
+    }
+
+    let startTime = null;
+
+    function update(ts) {
+      if (!startTime) startTime = ts;
+      const p = Math.min((ts - startTime) / duration, 1);
+      const value = Math.round(target * easeOutCubic(p));
+      el.textContent = `${prefix}${value}${suffix}`;
+
+      if (p < 1) requestAnimationFrame(update);
+      else el.textContent = `${prefix}${target}${suffix}`;
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  function animateSvgLine(path, duration = 1200) {
+    if (!path) return;
+
+    if (reduceMotion) {
+      path.style.strokeDashoffset = 0;
+      return;
+    }
+
+    const length = path.getTotalLength();
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = length;
+
+    let startTime = null;
+
+    function tick(ts) {
+      if (!startTime) startTime = ts;
+      const p = Math.min((ts - startTime) / duration, 1);
+      const eased = easeOutCubic(p);
+      path.style.strokeDashoffset = (length * (1 - eased)).toFixed(2);
+
+      if (p < 1) requestAnimationFrame(tick);
+      else path.style.strokeDashoffset = 0;
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  function runOnce() {
+    // Countups
+    section.querySelectorAll(".countup").forEach(el => {
+      if (el.dataset.animated) return;
+      el.dataset.animated = "true";
+      animateCounter(el);
+    });
+
+    // SVG lines (main + glow)
+    section.querySelectorAll(".stat-card").forEach(card => {
+      if (card.dataset.bgAnimated) return;
+      card.dataset.bgAnimated = "true";
+
+      const main = card.querySelector(".bg-line-main");
+      const glow = card.querySelector(".bg-line-glow");
+
+      animateSvgLine(main, 1100);
+      animateSvgLine(glow, 1400);
+    });
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        runOnce();
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.35 });
+
+  io.observe(section);
+})();
+</script>
+
+<script>
+(() => {
+  const wrap = document.getElementById('howWrap');
+  const svg  = document.getElementById('howSvg');
+  if (!wrap || !svg) return;
+
+  const NS = 'http://www.w3.org/2000/svg';
+  let rafId = null;
+
+  // =========================================================
+  // HOW IT WORKS — Infinite Chevron Flow (Regulável)
+  // =========================================================
+
+  // --------- FLOW / LAYOUT ----------
+  const SPEED = 100;            // px/s
+  const GAP   = 30;             // spacing between chevrons
+  const OVERLAP_X = 95;         // invade cards (desktop)
+  const OVERLAP_Y = 110;        // invade cards (mobile)
+  const MID_RATIO = 0.55;       // connection height inside card
+  const EDGE_FADE_PX = 85;      // fade at ends of each segment
+
+  // >>> NOVO: offsets do eixo "perpendicular" à linha
+  // Desktop (linha horizontal): desloca NO Y (positivo = desce, negativo = sobe)
+  const DESKTOP_Y_OFFSET = -15;   // ex: -18 para subir a linha
+  // Mobile (linha vertical): desloca NO X (positivo = direita, negativo = esquerda)
+  const MOBILE_X_OFFSET  = 0;   // ex:  14 para empurrar pra direita
+
+  // --------- CHEVRON SIZE ----------
+  const SCALE = 0.8;            // overall chevron scale (your perfect value)
+  const CHEV_W = 6 * SCALE;     // ">" width
+  const CHEV_H = 10 * SCALE;    // ">" height
+
+  // --------- THICKNESS (REGULÁVEL) ----------
+  const THICKNESS_CORE = 0.6;   // base core thickness (before SCALE)
+  const THICKNESS_GLOW = 1.5;   // base glow thickness (before SCALE)
+  const CORE_W = THICKNESS_CORE * SCALE;
+  const GLOW_W = THICKNESS_GLOW * SCALE;
+
+  // --------- COLORS ----------
+  const CORE_STROKE = 'rgba(255,255,255,.98)';
+  const GLOW_STROKE = 'rgba(255,255,255,.55)';
+
+  // --------- BLUR / TRAIL ----------
+  const GLOW_BLUR = 8;
+  const MOTION_BLUR = 0.5;     // 0 = off
+
+  // deslocamento do trail (pode ser + ou -)
+  const TRAIL_BIAS = 0.0;
+
+  // anti-clipping do blur (evita quadrado)
+  const FILTER_PAD = 1400;
+  // =========================================================
+
+  function isMobile(){ return window.matchMedia('(max-width: 991.98px)').matches; }
+
+  function setViewBox(){
+    const r = wrap.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${r.width} ${r.height}`);
+    svg.setAttribute('width', r.width);
+    svg.setAttribute('height', r.height);
+
+    svg.style.overflow = 'visible';
+    wrap.style.overflow = 'visible';
+  }
+
+  function relRect(el){
+    const r = el.getBoundingClientRect();
+    const w = wrap.getBoundingClientRect();
+    return {
+      left: r.left - w.left,
+      top: r.top - w.top,
+      width: r.width,
+      height: r.height,
+      right: (r.left - w.left) + r.width,
+      bottom:(r.top - w.top) + r.height
+    };
+  }
+
+  function clearSvg(){
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+  }
+
+  function el(name, attrs = {}){
+    const node = document.createElementNS(NS, name);
+    for (const [k,v] of Object.entries(attrs)) node.setAttribute(k, v);
+    return node;
+  }
+
+  function addDefs(){
+    const defs = el('defs');
+
+    // Glow filter (anti-clipping)
+    const glow = el('filter', {
+      id: 'howGlow',
+      filterUnits: 'userSpaceOnUse',
+      x: String(-FILTER_PAD),
+      y: String(-FILTER_PAD),
+      width: String(FILTER_PAD * 2),
+      height: String(FILTER_PAD * 2),
+      colorInterpolationFilters: 'sRGB'
+    });
+
+    glow.appendChild(el('feGaussianBlur', {
+      in:'SourceGraphic',
+      stdDeviation:String(GLOW_BLUR),
+      result:'blur'
+    }));
+
+    const merge = el('feMerge');
+    merge.appendChild(el('feMergeNode', { in:'blur' }));
+    merge.appendChild(el('feMergeNode', { in:'SourceGraphic' }));
+    glow.appendChild(merge);
+
+    defs.appendChild(glow);
+
+    // Motion blur-ish filter (anti-clipping) — blur + symmetric offsets + bias
+    const mblur = el('filter', {
+      id: 'howMotion',
+      filterUnits: 'userSpaceOnUse',
+      x: String(-FILTER_PAD),
+      y: String(-FILTER_PAD),
+      width: String(FILTER_PAD * 2),
+      height: String(FILTER_PAD * 2),
+      colorInterpolationFilters: 'sRGB'
+    });
+
+    const std = Math.max(0.01, 2.8 * MOTION_BLUR);
+    mblur.appendChild(el('feGaussianBlur', {
+      in:'SourceGraphic',
+      stdDeviation:String(std),
+      result:'mb'
+    }));
+
+    const d1 = 3.0 * MOTION_BLUR;
+    const d2 = 6.0 * MOTION_BLUR;
+
+    const bias1 = d1 * TRAIL_BIAS;
+    const bias2 = d2 * TRAIL_BIAS;
+
+    let dx_p1, dy_p1, dx_n1, dy_n1, dx_p2, dy_p2, dx_n2, dy_n2;
+
+    if (!isMobile()){
+      dx_p1 = +d1 + bias1; dy_p1 = 0;
+      dx_n1 = -d1 + bias1; dy_n1 = 0;
+      dx_p2 = +d2 + bias2; dy_p2 = 0;
+      dx_n2 = -d2 + bias2; dy_n2 = 0;
+    } else {
+      dx_p1 = 0; dy_p1 = +d1 + bias1;
+      dx_n1 = 0; dy_n1 = -d1 + bias1;
+      dx_p2 = 0; dy_p2 = +d2 + bias2;
+      dx_n2 = 0; dy_n2 = -d2 + bias2;
+    }
+
+    mblur.appendChild(el('feOffset', { in:'mb', dx:String(dx_p1), dy:String(dy_p1), result:'o1' }));
+    mblur.appendChild(el('feOffset', { in:'mb', dx:String(dx_n1), dy:String(dy_n1), result:'o2' }));
+    mblur.appendChild(el('feOffset', { in:'mb', dx:String(dx_p2), dy:String(dy_p2), result:'o3' }));
+    mblur.appendChild(el('feOffset', { in:'mb', dx:String(dx_n2), dy:String(dy_n2), result:'o4' }));
+
+    const merge2 = el('feMerge');
+    merge2.appendChild(el('feMergeNode', { in:'o4' }));
+    merge2.appendChild(el('feMergeNode', { in:'o3' }));
+    merge2.appendChild(el('feMergeNode', { in:'o2' }));
+    merge2.appendChild(el('feMergeNode', { in:'o1' }));
+    merge2.appendChild(el('feMergeNode', { in:'SourceGraphic' }));
+    mblur.appendChild(merge2);
+
+    defs.appendChild(mblur);
+
+    svg.appendChild(defs);
+  }
+
+  function makeSegment(a, b){
+    if (!isMobile()){
+      const midA = a.top + a.height * MID_RATIO;
+      const midB = b.top + b.height * MID_RATIO;
+      let y = (midA + midB) / 2;
+
+      // >>> NOVO: offset vertical no desktop
+      y += DESKTOP_Y_OFFSET;
+
+      const x1 = a.right - OVERLAP_X;
+      const x2 = b.left  + OVERLAP_X;
+
+      return { x1, y1:y, x2, y2:y, vertical:false };
+    } else {
+      const xA = a.left + a.width/2;
+      const xB = b.left + b.width/2;
+      let x  = (xA + xB) / 2;
+
+      // >>> NOVO: offset horizontal no mobile
+      x += MOBILE_X_OFFSET;
+
+      const y1 = a.bottom - OVERLAP_Y;
+      const y2 = b.top    + OVERLAP_Y;
+
+      return { x1:x, y1, x2:x, y2, vertical:true };
+    }
+  }
+
+  function segments(){
+    const cards = [...wrap.querySelectorAll('.how-card')];
+    if (cards.length !== 3) return [];
+    const r1 = relRect(cards[0]);
+    const r2 = relRect(cards[1]);
+    const r3 = relRect(cards[2]);
+    return [makeSegment(r1,r2), makeSegment(r2,r3)];
+  }
+
+  function segLength(s){
+    return s.vertical ? Math.abs(s.y2 - s.y1) : Math.abs(s.x2 - s.x1);
+  }
+
+  function chevronPathD(vertical){
+    if (!vertical){
+      return `M ${-CHEV_W} ${-CHEV_H} L ${CHEV_W} 0 L ${-CHEV_W} ${CHEV_H}`;
+    }
+    return `M ${-CHEV_H} ${-CHEV_W} L 0 ${CHEV_W} L ${CHEV_H} ${-CHEV_W}`;
+  }
+
+  function createChevronPair(group, vertical){
+    const d = chevronPathD(vertical);
+
+    const glowG = el('g', { filter: (MOTION_BLUR > 0 ? 'url(#howMotion)' : 'url(#howGlow)') });
+
+    const glow = el('path', { d });
+    glow.setAttribute('fill', 'none');
+    glow.setAttribute('stroke', GLOW_STROKE);
+    glow.setAttribute('stroke-width', String(GLOW_W));
+    glow.setAttribute('stroke-linecap', 'round');
+    glow.setAttribute('stroke-linejoin', 'round');
+    glowG.appendChild(glow);
+
+    const core = el('path', { d });
+    core.setAttribute('fill', 'none');
+    core.setAttribute('stroke', CORE_STROKE);
+    core.setAttribute('stroke-width', String(CORE_W));
+    core.setAttribute('stroke-linecap', 'round');
+    core.setAttribute('stroke-linejoin', 'round');
+
+    group.appendChild(glowG);
+    group.appendChild(core);
+
+    return { glowG, core };
+  }
+
+  let flowModels = [];
+
+  function build(){
+    setViewBox();
+    clearSvg();
+    addDefs();
+    flowModels = [];
+
+    const segs = segments();
+
+    segs.forEach((s) => {
+      const g = el('g');
+      svg.appendChild(g);
+
+      const L = segLength(s);
+      const count = Math.max(4, Math.floor(L / GAP));
+
+      const items = [];
+      for (let i=0; i<count; i++){
+        const basePos = (i/(count-1)) * L;
+        const pair = createChevronPair(g, s.vertical);
+        items.push({ pos: basePos, glowG: pair.glowG, core: pair.core });
+      }
+
+      flowModels.push({ seg: s, len: L, items });
+    });
+  }
+
+  function positionAt(seg, p){
+    return seg.vertical
+      ? { x: seg.x1,     y: seg.y1 + p }
+      : { x: seg.x1 + p, y: seg.y1 };
+  }
+
+  function tick(ts){
+    const shift = ((ts/1000) * SPEED) % GAP;
+
+    for (const model of flowModels){
+      const { seg, len: L, items } = model;
+
+      for (const it of items){
+        const p = (it.pos + shift) % L;
+        const { x, y } = positionAt(seg, p);
+
+        it.glowG.setAttribute('transform', `translate(${x} ${y})`);
+        it.core.setAttribute('transform', `translate(${x} ${y})`);
+
+        const edge = Math.min(p, L - p);
+        const a = Math.max(0.10, Math.min(1, edge / EDGE_FADE_PX));
+
+        it.glowG.style.opacity = String(a * 0.90);
+        it.core.style.opacity  = String(a * 1.00);
+      }
+    }
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function stop(){
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
+  function render(){
+    stop();
+    build();
+    rafId = requestAnimationFrame(tick);
+  }
+
+  let timer;
+  function schedule(){
+    clearTimeout(timer);
+    timer = setTimeout(render, 140);
+  }
+
+  window.addEventListener('resize', schedule);
+  window.addEventListener('load', schedule);
+
+  setTimeout(render, 220);
+  setTimeout(render, 950);
+})();
+</script>
+
+
+</body>
+
+</html>
