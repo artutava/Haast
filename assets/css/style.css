@@ -8275,6 +8275,30 @@ video.bg-video {
   --glass-edge-rgb-b: 255;
 }
 
+.glass-premium-giant {
+  --glass-bg-r: 10;
+  --glass-bg-g: 10;
+  --glass-bg-b: 14;
+  --glass-bg-alpha: 0.15;
+  --glass-border-alpha: 0.18;
+  --glass-blur: 14px;
+  /* frost (um pouco, mas não “milky”) */
+  --glass-frost: 0.05;
+  --glass-overlay: 0.55;
+  /* >>> SUAS CONFIGS PEDIDAS <<< */
+  --glass-spot-i: 0.1;
+  --glass-edge-i: 0.55;
+  --glass-spot-r: 1500px;
+  --glass-edge-scale: 0.75;
+  /* cores (mantém as originais) */
+  --glass-spot-rgb-r: 255;
+  --glass-spot-rgb-g: 255;
+  --glass-spot-rgb-b: 255;
+  --glass-edge-rgb-r: 120;
+  --glass-edge-rgb-g: 200;
+  --glass-edge-rgb-b: 255;
+}
+
 /* Neon: mais forte */
 .glass-neon {
   --glass-bg-r: 8;
@@ -8672,6 +8696,7 @@ span.badge-1 {
    ========================================================= */
 .howitworks-section {
   position: relative;
+  margin-top: 500px;
 }
 
 .how-wrap {
@@ -8771,6 +8796,218 @@ span.badge-1 {
     animation: none !important;
   }
 }
+.section-render {
+  width: 100%;
+  height: 100vh;
+  background: url(/assets/images/bg/bg_render4.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.mask-gradient1 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgb(15, 15, 15) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
+/* =========================================================
+  COMPARE TABLE — style-lines-only
+  Only horizontal lines (bottom), 1px solid, dark gray
+  All left-aligned
+========================================================= */
+.rainbow-compare-table.style-lines-only .cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rainbow-compare-table.style-lines-only .cmp-th,
+.rainbow-compare-table.style-lines-only .cmp-td {
+  text-align: left;
+  vertical-align: top;
+  padding: 18px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.062); /* dark gray on dark bg */
+}
+
+.rainbow-compare-table.style-lines-only table,
+.rainbow-compare-table.style-lines-only th,
+.rainbow-compare-table.style-lines-only td {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+}
+
+/* Header (no special red styling) */
+.rainbow-compare-table.style-lines-only .cmp-thead .cmp-th {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Header text blocks */
+.cmp-head-title {
+  display: block;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.cmp-head-sub {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* Dimension label */
+.cmp-dim-text {
+  display: inline-block;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* Icon + text layout (icon narrow column; text beside it) */
+.cmp-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cmp-ico {
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+/* If you want subtle differentiation */
+.cmp-ico--ok {
+  opacity: 0.95;
+}
+
+.cmp-ico--no {
+  opacity: 0.65;
+}
+
+.cmp-txt {
+  display: block;
+}
+
+.cmp-main {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.cmp-sub {
+  margin: 6px 0 0 0;
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.25;
+}
+
+/* Optional: improve mobile readability */
+@media (max-width: 575.98px) {
+  .rainbow-compare-table.style-lines-only .cmp-th,
+  .rainbow-compare-table.style-lines-only .cmp-td {
+    padding: 14px 14px;
+  }
+}
+.logo-light-compare {
+  width: 200px;
+}
+
+.cmp-ico--ok {
+  color: #b2ffc0;
+}
+
+/* ===========================
+   CONTACT FORM — DARK / GLASS
+   =========================== */
+.contact-form-dark {
+  width: 100%;
+}
+
+/* Labels */
+.contact-form-dark .form-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Inputs & Textarea */
+.form-control-dark {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 0.85rem 0.95rem;
+  font-size: 16px;
+  min-height: 52px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder */
+.form-control-dark::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.form-control-dark::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Textarea specific */
+textarea.form-control-dark {
+  min-height: 120px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  resize: vertical;
+}
+
+/* Focus state — keep dark */
+.form-control-dark:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 0 0 3px rgba(255, 255, 255, 0.05);
+  outline: none;
+}
+
+/* Ensure textarea focus also applies */
+textarea.form-control-dark:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Spacing between fields */
+.contact-form-dark .mb-3,
+.contact-form-dark .mb-4 {
+  margin-bottom: 1.75rem;
+}
+
+/* Button alignment (optional refinement) */
+.contact-form-dark .btn {
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 10px;
+}
+
+/* Disabled state (optional) */
+.form-control-dark:disabled,
+.form-control-dark[readonly] {
+  background-color: rgba(255, 255, 255, 0.03);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.section-contact {
+  min-height: 100vh;
+  background-color: var(--color-blackest) !important;
+  background: url(../images/bg/haast_bg_bw_noise.png) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+}
+
 /* ========= Forms Styles ========= */
 button,
 [type=button],
