@@ -9008,16 +9008,9 @@ textarea.form-control-dark:focus {
   background-position: top center !important;
 }
 
-.header-sticky.sticky {
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-  background-color: rgba(22, 22, 22, 0.631372549) !important;
-}
-
 .parallax-2 {
   --parallax-img: url("/assets/images/bg/haast-parallax-2.png") !important;
   --parallax-dim: 0.55;
-  filter: saturate(0);
 }
 
 /* ================================
@@ -9053,6 +9046,12 @@ textarea.form-control-dark:focus {
   background: rgba(255, 255, 255, 0.08);
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
+}
+
+header.rainbow-header.header-default.header-transparent.header-sticky.header-glass.sticky {
+  backdrop-filter: blur(20px) !important;
+  background-color: rgba(22, 22, 22, 0.631372549) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
 }
 
 /* ========= Forms Styles ========= */

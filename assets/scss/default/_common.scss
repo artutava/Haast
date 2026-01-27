@@ -2081,16 +2081,12 @@ textarea.form-control-dark:focus {
     background-position: top center !important;
 }
 
-.header-sticky.sticky {
-    backdrop-filter: blur(20px);
-    background-color: #161616a1 !important;
-}
+
 
 
 .parallax-2 {
   --parallax-img: url("/assets/images/bg/haast-parallax-2.png") !important;
   --parallax-dim: 0.55;
-  filter: saturate(0);
 }
 
 /* ================================
@@ -2135,4 +2131,10 @@ textarea.form-control-dark:focus {
 .changelog_info .c_version.bg-yellow {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(6px);
+}
+
+header.rainbow-header.header-default.header-transparent.header-sticky.header-glass.sticky {
+    backdrop-filter: blur(20px) !important;
+    background-color: #161616a1 !important;
+    -webkit-backdrop-filter: blur(20px) !important;
 }
